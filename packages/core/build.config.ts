@@ -1,26 +1,24 @@
-import { BuildEntry, MkdistBuildEntry, defineBuildConfig } from "unbuild";
+import { BuildEntry, MkdistBuildEntry, defineBuildConfig } from "unbuild"
 
-function dualOutput(
-  config: Omit<MkdistBuildEntry, "builder" | "format">
-): BuildEntry[] {
+// https://github.com/unjs/unbuild/issues/398
+function dualOutput( config: Omit<MkdistBuildEntry, "builder" | "format"> ): BuildEntry[] {
   return [
     {
       builder: "mkdist",
       format: "esm",
       ...config,
-      pattern: "**/*.{js,jsx,ts,tsx}",
+      pattern: "**/*.{ts}",
     },
     {
       builder: "mkdist",
       format: "cjs",
       ...config,
-      pattern: "**/*.{js,jsx,ts,tsx}",
+      pattern: "**/*.{ts}",
     }
-  ];
+  ]
 }
 
 export default defineBuildConfig({
-  // If entries is not provided, will be automatically inferred from package.json
   entries: [
     ...dualOutput({
       input: './src/tailwindcss',
@@ -40,6 +38,5 @@ export default defineBuildConfig({
       outDir: './dist/css'
     }
   ],
-  // Generates .d.ts declaration file
   declaration: true
 })
