@@ -1,7 +1,6 @@
 {
-  "name": "fadecss",
-  "private": true,
-  "version": "0.1.0",
+  "name": "css-fade",
+  "version": "0.9.0",
   "type": "module",
   "files": [
     "dist"
