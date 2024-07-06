@@ -7,13 +7,13 @@ function dualOutput( config: Omit<MkdistBuildEntry, "builder" | "format"> ): Bui
       builder: "mkdist",
       format: "esm",
       ...config,
-      pattern: "**/*.{ts}",
+      pattern: "**/*.{ts,js}",
     },
     {
       builder: "mkdist",
       format: "cjs",
       ...config,
-      pattern: "**/*.{ts}",
+      pattern: "**/*.{ts,js}",
     }
   ]
 }
