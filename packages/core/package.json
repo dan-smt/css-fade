@@ -1,0 +1,39 @@
+{
+  "name": "fadecss",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./unocss": {
+      "types": "./dist/unocss/index.d.ts",
+      "import": "./dist/unocss/index.mjs",
+      "require": "./dist/unocss/index.js"
+    },
+    "./tailwindcss": {
+      "types": "./dist/tailwindcss/index.d.ts",
+      "import": "./dist/tailwindcss/index.mjs",
+      "require": "./dist/tailwindcss/index.js"
+    },
+    "./css": "./dist/css/index.css"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && unbuild"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@types/postcss-js": "^4.0.4",
+    "postcss": "^8.4.39",
+    "postcss-js": "^4.0.1",
+    "rimraf": "^5.0.7",
+    "tailwindcss": "^3.4.4",
+    "tsx": "^4.16.2",
+    "unbuild": "^2.0.0",
+    "unocss": "^0.61.0",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}

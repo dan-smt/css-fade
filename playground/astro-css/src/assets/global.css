@@ -1,0 +1,117 @@
+
+/* SOURCE: css copied from /src/css/index.css */
+
+*, *::before, *::after {
+
+  /* i stands for internal, used to apply default values where no values are provided. */
+  --fade-w-r-i: var(--fade-w-r, 0px);
+  --fade-w-l-i: var(--fade-w-l, 0px);
+  --fade-w-t-i: var(--fade-w-t, 0px);
+  --fade-w-b-i: var(--fade-w-b, 0px);
+
+  --fade-side-l: 
+    /* pos */ 
+      left 
+      var(--fade-w-t-i) / 
+    /* size */ 
+      var(--fade-w-l-i) 
+      calc(100% - var(--fade-w-b-i) - var(--fade-w-t-i)) 
+    no-repeat 
+    linear-gradient(to left, white, transparent)
+  ;
+
+  --fade-side-r: 
+    /* pos */ 
+      right 
+      var(--fade-w-t-i) / 
+    /* size */ 
+      var(--fade-w-r-i) 
+      calc(100% - var(--fade-w-b-i) - var(--fade-w-t-i)) 
+    no-repeat 
+    linear-gradient(to right, white, transparent)
+  ;
+
+  --fade-side-t: 
+    /* pos */ 
+      var(--fade-w-l-i) 
+      top / 
+    /* size */ 
+      calc(100% - var(--fade-w-l-i) - var(--fade-w-r-i)) 
+      var(--fade-w-t-i) 
+    no-repeat 
+    linear-gradient(to top, white, transparent)
+  ;
+
+  --fade-side-b: 
+    /* pos */ 
+      var(--fade-w-l-i) 
+      bottom / 
+    /* size */ 
+      calc(100% - var(--fade-w-l-i) - var(--fade-w-r-i)) 
+      var(--fade-w-b-i) 
+    no-repeat 
+    linear-gradient(to bottom, white, transparent)
+  ;
+
+  --fade-corner-tl: 
+    /* pos */ left top / 
+    /* size */ 
+      var(--fade-w-l-i) 
+      var(--fade-w-t-i) 
+    no-repeat 
+    radial-gradient(var(--fade-w-l-i) var(--fade-w-t-i) ellipse at 100% 100%, white, transparent)
+  ;
+
+  --fade-corner-tr: 
+    /* pos */ right top / 
+    /* size */ 
+      var(--fade-w-r-i) 
+      var(--fade-w-t-i) 
+    no-repeat 
+    radial-gradient(var(--fade-w-r-i) var(--fade-w-t-i) ellipse at 0% 100%, white, transparent)
+  ;
+
+  --fade-corner-bl: 
+    /* pos */ left bottom / 
+    /* size */ 
+      var(--fade-w-l-i) 
+      var(--fade-w-b-i) 
+    no-repeat 
+    radial-gradient(var(--fade-w-l-i) var(--fade-w-b-i) ellipse at 100% 0%, white, transparent)
+  ;
+
+  --fade-corner-br: 
+    /* pos */ right bottom / 
+    /* size */ 
+      var(--fade-w-r-i) 
+      var(--fade-w-b-i) 
+    no-repeat 
+    radial-gradient(var(--fade-w-r-i) var(--fade-w-b-i) ellipse at 0% 0%, white, transparent)
+  ;
+
+  --fade-c:
+    /* pos */ 
+      calc(var(--fade-w-l-i) - 0.25px) 
+      calc(var(--fade-w-t-i) - 0.25px) / 
+    /* size */ 
+      calc(100% - var(--fade-w-l-i) - var(--fade-w-r-i) + .5px) 
+      calc(100% - var(--fade-w-t-i) - var(--fade-w-b-i) + .5px) 
+    no-repeat 
+    linear-gradient(white, white)
+  ;
+
+  --fade-mask-template: 
+    var(--fade-side-l), 
+    var(--fade-side-r), 
+    var(--fade-side-t), 
+    var(--fade-side-b),
+
+    var(--fade-corner-tl),
+    var(--fade-corner-tr),
+    var(--fade-corner-bl),
+    var(--fade-corner-br),
+
+    var(--fade-c)
+  ;
+  
+}

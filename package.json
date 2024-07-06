@@ -1,0 +1,11 @@
+{
+  "name": "css-fade-workspace",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.14.9"
+  }
+}

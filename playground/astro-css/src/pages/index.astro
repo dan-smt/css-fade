@@ -1,0 +1,47 @@
+---
+
+// 1. Add base css
+
+import 'fadecss/css' // import base css into your project
+// import '../assets/global.css' // or copy paste the base css into your css folder ( copy from: /src/css/index.css )
+
+---
+
+<main class="wrapper" >
+  <div class="box" >
+
+  </div>
+</main>
+
+<style>
+
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.wrapper {
+		height: 100vh;
+		width: 100vw;
+		display: grid;
+		place-content: center;
+		background-color: black;
+	}
+
+	.box {
+		height: 480px;
+		width: 480px;
+		background-color: pink;
+
+		/* 2. configure your variables */
+		--fade-w-t: 3rem;
+		/* --fade-w-b: 12rem; <== you can leave variables blank. */
+		--fade-w-l: 8rem;
+		--fade-w-r: 8rem;
+
+		/* 3. assign the mask template to the mask property */
+		mask: var(--fade-mask-template)
+
+	}
+
+</style>
