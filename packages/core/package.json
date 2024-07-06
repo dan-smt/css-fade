@@ -2,6 +2,15 @@
   "name": "css-fade",
   "version": "0.9.0",
   "type": "module",
+  "homepage": "https://github.com/dan-smt/css-fade",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dan-smt/css-fade",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/dan-smt/css-fade/issues"
+  },
   "files": [
     "dist"
   ],
