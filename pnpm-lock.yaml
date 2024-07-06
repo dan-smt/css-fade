@@ -13,7 +13,7 @@ importers:
         version: 20.14.9
 
   packages/core:
-    dependencies:
+    devDependencies:
       '@types/postcss-js':
         specifier: ^4.0.4
         version: 4.0.4
@@ -32,16 +32,15 @@ importers:
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
+      typescript:
+        specifier: ^5.5.3
+        version: 5.5.3
       unbuild:
         specifier: ^2.0.0
         version: 2.0.0(typescript@5.5.3)(vue-tsc@1.8.27(typescript@5.5.3))
       unocss:
         specifier: ^0.61.0
         version: 0.61.0(postcss@8.4.39)(rollup@3.29.4)(vite@5.3.3(@types/node@20.14.9))
-    devDependencies:
-      typescript:
-        specifier: ^5.5.3
-        version: 5.5.3
 
   playground/astro-css:
     dependencies:
@@ -51,7 +50,7 @@ importers:
       astro:
         specifier: ^4.11.3
         version: 4.11.3(@types/node@20.14.9)(typescript@5.5.3)
-      fadecss:
+      css-fade:
         specifier: workspace:*
         version: link:../../packages/core
       typescript:
@@ -69,7 +68,7 @@ importers:
       astro:
         specifier: ^4.11.3
         version: 4.11.3(@types/node@20.14.9)(typescript@5.5.3)
-      fadecss:
+      css-fade:
         specifier: workspace:*
         version: link:../../packages/core
       tailwindcss:
@@ -90,7 +89,7 @@ importers:
       astro:
         specifier: ^4.11.3
         version: 4.11.3(@types/node@20.14.9)(typescript@5.5.3)
-      fadecss:
+      css-fade:
         specifier: workspace:*
         version: link:../../packages/core
       typescript:
