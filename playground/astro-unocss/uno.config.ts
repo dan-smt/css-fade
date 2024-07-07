@@ -1,4 +1,4 @@
-import presetFade from "fadecss/unocss"
+import presetFade from "css-fade/unocss"
 
 import {
   defineConfig,
