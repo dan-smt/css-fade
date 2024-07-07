@@ -25,7 +25,8 @@
       "import": "./dist/tailwindcss/index.mjs",
       "require": "./dist/tailwindcss/index.js"
     },
-    "./css": "./dist/css/index.css"
+    "./css": "./dist/css/index.css",
+    "./css-utilities": "./dist/css/utilities.css"
   },
   "scripts": {
     "build": "rimraf ./dist && unbuild"
