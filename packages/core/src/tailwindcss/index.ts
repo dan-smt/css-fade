@@ -40,6 +40,18 @@ const pluginFade = plugin(
     // add preflights
     addBase(preflightCssInJs)
 
+    addUtilities({
+      '.fade-reset': {
+        '--fade-o-from': '100%',
+        '--fade-o-to': '0%',
+        '--fade-w-r': '0rem',
+        '--fade-w-l': '0rem',
+        '--fade-w-t': '0rem',
+        '--fade-w-b': '0rem',
+        '--fade-mask-configure-template': 'initial'
+      }
+    })
+
     const values = theme('fade')
     const opacityValues = theme('fadeOpacity')
 

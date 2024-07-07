@@ -3,12 +3,17 @@
 // 1. Add base css
 
 import 'css-fade/css' // import base css into your project
+import 'css-fade/css/utilities'
 // import '../assets/global.css' // or copy paste the base css into your css folder ( copy from: /src/css/index.css )
 
 ---
 
 <main class="wrapper" >
   <div class="box" >
+
+		<div class="box-nested fade-reset" >
+
+		</div>
 
   </div>
 </main>
@@ -32,6 +37,8 @@ import 'css-fade/css' // import base css into your project
 		height: 480px;
 		width: 480px;
 		background-color: pink;
+		display: grid;
+		place-content: center;
 
 		/* 2. configure your variables */
 		--fade-w-t: 3rem;
@@ -42,6 +49,15 @@ import 'css-fade/css' // import base css into your project
 		/* 3. assign the mask template to the mask property */
 		mask: var(--fade-mask-template)
 
+	}
+
+	.box-nested {
+		height: 200px;
+		width: 200px;
+		background-color: blue;
+
+		--fade-w-b: 40%;
+		mask: var(--fade-mask-template)
 	}
 
 </style>

@@ -15,6 +15,18 @@ export function presetFade(): Preset<Theme> {
     ],
     rules: [
       [
+        'fade-reset',
+        {
+          '--fade-o-from': '100%',
+          '--fade-o-to': '0%',
+          '--fade-w-r': '0rem',
+          '--fade-w-l': '0rem',
+          '--fade-w-t': '0rem',
+          '--fade-w-b': '0rem',
+          '--fade-mask-configure-template': 'initial'
+        }
+      ],
+      [
         /^fade-?([rltb]{1,2}|[xya])?-(.+)$/,
         ([_, d, s]) => {
 
