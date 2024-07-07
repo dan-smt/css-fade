@@ -1,0 +1,3 @@
+.fade-smooth {
+  --fade-mask-configure-template: var(--fade-mask-template-smooth);
+}
