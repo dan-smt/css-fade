@@ -19,14 +19,6 @@ export default defineConfig({
       ],
     },
   },
-  rules: [
-    [
-      "bg-effect-lighting",
-      {
-        "mask-image": "radial-gradient(rgba(0, 0, 0, .27), transparent 70%)"
-      }
-    ],
-  ],
   presets: [
     presetWind(),
     presetFade(),

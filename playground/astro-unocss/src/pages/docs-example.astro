@@ -149,7 +149,7 @@ import '@unocss/reset/tailwind.css'
           Behind gradient
         </div>
   
-        <div class="bg-gradient-to-tr from-purple to-blue h-60 w-60 grid place-content-center absolute fade-24 fade-smooth fade-from-0 fade-to-90" >
+        <div class="bg-gradient-to-tr from-purple to-blue h-48 w-48 grid place-content-center absolute fade-24 fade-smooth fade-from-0 fade-to-90" >
 
           <div class="w-48 h-48 rounded-full outline-4 outline-solid outline-white" >
 
@@ -224,17 +224,17 @@ import '@unocss/reset/tailwind.css'
 
       <div class="h-60 w-24 flex flex-col items-center justify-center overflow-hidden fade-y-24 space-y-4" >
 
-        <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-40 shrink-0" ></div>
-        <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-10 shrink-0" ></div>
+        <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-30 shrink-0" ></div>
+        <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-20 shrink-0" ></div>
         <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-10 shrink-0" ></div>
 
       </div>
 
       <div class="h-60 w-24 flex flex-col items-center justify-center overflow-hidden fade-y-24 space-y-4" >
 
-        <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-10 shrink-0" ></div>
         <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-20 shrink-0" ></div>
-        <div class="bg-neutral-100 rounded-full w-20 h-30 shrink-0" ></div>
+        <div class="outline-4 outline-solid outline-neutral-100 rounded-full w-20 h-20 shrink-0" ></div>
+        <div class="bg-neutral-100 rounded-full w-20 h-20 shrink-0" ></div>
 
       </div>
       
@@ -245,22 +245,22 @@ import '@unocss/reset/tailwind.css'
 
       <div>
 
-        <div class="bg-gradient-to-r from-purple to-blue h-180 w-180 bg-effect-lighting absolute top-1/2 -translate-1/2" >
+        <div class="bg-gradient-to-r from-purple to-blue h-240 w-240 fade-[50%] fade-from-30 absolute top-1/2 -translate-1/2" >
 
         </div>
 
-        <div class="font-[Helvetica] text-white text-3xl" >
+        <div class="font-[Helvetica] text-white text-3xl ml-12" >
           <span class="bg-gradient-to-r from-purple/90 to-blue/90 fade-b-6 fade-l-12 fade-to-10 py-1 px-4 mb-4 rounded-full inline-block text-xl" >
             Advanced
           </span>
           <br /> 
           <span class="font-bold" >
-            Nest fade masks:
+            Nest & stack <br /> fade masks:
           </span>
-          <div class="text-neutral-400 text-sm break-words max-w-[35ch] mt-2">
+          <div class="text-neutral-400 text-base break-words max-w-[35ch] mt-2">
             All code available @ /playground/astro-unocss/src/pages/docs-example.astro
           </div>
-        </div>        
+        </div> 
       </div>
 
     </div>
@@ -277,7 +277,7 @@ import '@unocss/reset/tailwind.css'
         </span>
       </div>
   
-      <div class="h-60 w-60 overflow-hidden relative flex items-center justify-center fade-b-60 rounded-t-full" >
+      <div class="h-60 w-60 relative flex items-center justify-center fade-b-60 rounded-t-full" >
 
         <div class="font-[Helvetica] text-white text-4xl text-nowrap absolute inline-block" >
           Behind gradient
@@ -285,7 +285,7 @@ import '@unocss/reset/tailwind.css'
   
         <div class="bg-gradient-to-tr from-purple to-blue h-60 w-60 grid place-content-center absolute fade-24 fade-smooth fade-from-0 fade-to-90" >
 
-          <div class="w-54 h-54 relative fade-reset fade-b-12 isolate rounded-t-full border-4 border-solid border-white" >
+          <div class="w-54 h-54 relative fade-reset fade-t-54 isolate rounded-b-full border-4 border-solid border-white" >
           </div>
       
         </div>
@@ -297,11 +297,46 @@ import '@unocss/reset/tailwind.css'
     <!-- 11 -->
     <div>
 
+      <div class="container-classes" >
+        <span>
+          ...fade-*
+        </span>
+      </div>
+  
+      <div class="h-72 w-72 relative flex items-center justify-center" >
+
+        <div class="bg-white h-72 w-72 grid place-content-center absolute fade-36 fade-from-20 -mt-36 rounded-full" ></div>
+  
+        <div class="bg-gradient-to-tr from-purple to-blue h-72 w-72 grid place-content-center absolute fade-36 mt-36 rounded-full" ></div>
+
+      </div>
+
     </div>
     
     <!-- 12 -->
     <div>
-    
+
+      <div class="container-classes" >
+        <span>
+          fade-[50%]
+        </span>
+        <span>
+          fade-from-25
+        </span>
+      </div>
+
+      <div class="h-72 w-72 relative flex items-center justify-center" >
+
+        <div class="bg-gradient-to-tr from-purple to-blue h-240 w-240 shrink-0 grid place-content-center absolute fade-[50%] fade-from-25 rounded-full" ></div>
+      
+        <div class="font-[Helvetica] text-neutral-400 text-xl text-nowrap absolute inline-block" >
+          No other percentage <br /> values besides 50% works.
+        </div>
+
+      </div>
+  
+
+
     </div>
 
   </div>
@@ -315,7 +350,7 @@ import '@unocss/reset/tailwind.css'
   }
 
   .grid-container > * {
-    --uno: "h-full w-full flex items-center justify-center outline-1 outline-solid outline-neutral-900 relative"
+    --uno: "h-full w-full flex items-center justify-center outline-1 outline-solid outline-neutral-900 relative overflow-hidden"
   }
 
   .grid-container > * > :not(.container-classes) {
@@ -327,7 +362,7 @@ import '@unocss/reset/tailwind.css'
   }
 
   .grid-container > * > .container-classes > span {
-    --uno: "py-.5 px-3 rounded-full outline-1 outline-solid outline-white/10 inline-flex text-white items-center shrink-0"
+    --uno: "py-.5 px-3 rounded-full outline-1 outline-solid outline-white/10 inline-flex text-white items-center shrink-0 bg-black/60"
   }
 
   /* .animate {

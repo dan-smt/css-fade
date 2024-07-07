@@ -34,11 +34,14 @@ export function presetFade(): Preset<Theme> {
 
           const matchedCustomSize = [...s.matchAll(/\[(.*)\]/g)][0]?.[1]
 
-          if(!matchedCustomSize && isNaN(Number(s))) return []
+          if(
+            !matchedCustomSize // is NOT custom value
+            && isNaN(Number(s)) // is NOT number
+          ) return []
 
           const sideSizes = getSizes(d, s)
 
-          const output = Object.entries(sideSizes).map(([side, size]) => [`--fade-w-${side}`, matchedCustomSize ?? `${(Number(size) / 4)}rem` ])
+          const output = Object.entries(sideSizes).map(([side, size]) => [`--fade-w-${side}`, matchedCustomSize ?? `${(Number(size) / 4)}rem`])
   
           return [
             ...output,
