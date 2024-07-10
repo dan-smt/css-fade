@@ -1,4 +1,4 @@
-*, *::before, *::after {
+*, ::before, ::after {
 
   /* i stands for internal, used to apply default values where no values are provided. */
   --fade-w-r-i: var(--fade-w-r, 0px);
