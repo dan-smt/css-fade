@@ -1,0 +1,102 @@
+<div class="fade" >
+
+
+</div>
+
+<style is:inline >
+
+  /* 
+  
+    Supports % values but has a problematic transition.
+  
+  */
+
+  .doctor-octopus .fade {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: red;
+
+    --fade-w-r: 6rem;
+    --fade-w-l: 4rem;
+    --fade-w-t: 10rem;
+    --fade-w-b: 6rem;
+
+    /* --fade-mask-configure-template: var(--fade-mask-template-smooth); */
+    mask: var(--fade-mask-template);
+
+  }
+
+  .doctor-octopus *, 
+  .doctor-octopus ::before, 
+  .doctor-octopus ::after {
+
+    /* i stands for internal, used to apply default values where no values are provided. */
+    --fade-w-r-i: var(--fade-w-r, 0px);
+    --fade-w-l-i: var(--fade-w-l, 0px);
+    --fade-w-t-i: var(--fade-w-t, 0px);
+    --fade-w-b-i: var(--fade-w-b, 0px);
+
+    --fade-o-from-i: var(--fade-o-from, 100%);
+    --fade-o-to-i: var(--fade-o-to, 0%);
+
+    --fade-inline: 
+      /* pos */ 
+        center / 
+      /* size */ 
+        100%
+        100%
+      no-repeat 
+      linear-gradient(
+        to left, 
+        /* left side edge */
+        rgb(255 255 255 / var(--fade-o-to-i)) 0%,
+        /* left side center */
+        rgb(255 255 255 / var(--fade-o-from-i)) var(--fade-w-l-i),
+        /* right side center */
+        rgb(255 255 255 / var(--fade-o-from-i)) calc(100% - var(--fade-w-r-i)),
+        /* right side edge */
+        rgb(255 255 255 / var(--fade-o-to-i)) 100%
+      )
+      /* composite */
+      intersect
+    ;
+
+    --fade-block:
+      /* pos */ 
+      center / 
+      /* size */ 
+        100%
+        100%
+      no-repeat 
+      linear-gradient(
+        to bottom, 
+        /* top side edge */
+        rgb(255 255 255 / var(--fade-o-to-i)) 0%,
+        /* top side center */
+        rgb(255 255 255 / var(--fade-o-from-i)) var(--fade-w-t-i),
+        /* bottom side center */
+        rgb(255 255 255 / var(--fade-o-from-i)) calc(100% - var(--fade-w-b-i)),
+        /* bottom side edge */
+        rgb(255 255 255 / var(--fade-o-to-i)) 100%
+      )
+      /* composite */
+      intersect
+    ;
+
+    --fade-mask-template-base: 
+      var(--fade-inline), 
+      var(--fade-block)
+    ;
+
+    --fade-mask-template-smooth: 
+      /* import base template twice */
+      var(--fade-mask-template-base),
+      var(--fade-mask-template-base)
+    ;
+
+    --fade-mask-template: var(--fade-mask-configure-template, var(--fade-mask-template-base))
+
+  }
+
+</style>

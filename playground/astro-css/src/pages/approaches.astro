@@ -1,0 +1,53 @@
+---
+// import DoctorOctopus from "../components/DoctorOctopus.astro";
+import BurningPaper from "../components/BurningPaper.astro";
+import RadicalRabbit from "../components/RadicalRabbit.astro"
+---
+
+
+<body>
+  <div class="root" >
+
+    <div class="workspace burning-paper" >
+      <BurningPaper />
+    </div>
+
+    <!-- <div class="workspace doctor-octopus" >
+      <DoctorOctopus />
+    </div> -->
+
+    <div class="workspace radical-rabbit" >
+      <RadicalRabbit />
+    </div>
+
+  </div>  
+</body>
+
+<style is:global>
+
+  body {
+    background-color: rgb(23, 23, 23);
+    margin: 0rem;
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+  }
+
+  .root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+  }
+
+  .workspace {
+    height: 25rem;
+    width: 25rem;
+    background-color: black;
+    position: relative;
+    padding: 4rem;
+  }
+
+</style>
