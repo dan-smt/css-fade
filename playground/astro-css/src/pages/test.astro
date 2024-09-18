@@ -1,5 +1,24 @@
+---
+
+const items = [
+  'Neon Leopard',
+  'People Pattern',
+  'Perfect Tornado',
+  'Red Pot',
+  'Raspberry Green'
+]
+
+---
+
 <div class="fade" >
 
+  {
+    items.map(item => (
+      <div class="item" >
+        {item}
+      </div>
+    ))
+  }
 
 </div>
 
@@ -7,15 +26,31 @@
 
   /* 
   
-    Supports % values but has a problematic transition.
+    Radical Rabbit approach
   
   */
 
-  .radical-rabbit .fade {
-    width: 100%;
-    height: 100%;
+  body {
+    background-image: url("/background-pattern.svg");
+    background-size: 24px;
+    background-repeat: repeat;
+  }
+
+  .item {
+    font-size: 64px;
+    font-weight: bold;
+    margin-right: 12px;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+  }
+
+  .fade {
+    width: 50%;
     display: flex;
-    background-color: red;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20rem;
 
     --fade-w-r: 30%;
     --fade-w-l: 30%;
@@ -27,9 +62,9 @@
 
   }
 
-  .radical-rabbit *, 
-  .radical-rabbit ::before, 
-  .radical-rabbit ::after {
+  *, 
+  ::before, 
+  ::after {
 
     /* i stands for internal, used to apply default values where no values are provided. */
     --fade-w-r-i: var(--fade-w-r, 0px);
