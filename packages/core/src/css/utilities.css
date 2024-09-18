@@ -5,9 +5,4 @@
   --fade-w-l: 0rem;
   --fade-w-t: 0rem;
   --fade-w-b: 0rem;
-  --fade-mask-configure-template: initial;
-}
-
-.fade-smooth {
-  --fade-mask-configure-template: var(--fade-mask-template-smooth);
 }

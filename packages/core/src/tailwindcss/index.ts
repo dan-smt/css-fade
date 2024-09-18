@@ -48,7 +48,6 @@ const pluginFade = plugin(
         '--fade-w-l': '0rem',
         '--fade-w-t': '0rem',
         '--fade-w-b': '0rem',
-        '--fade-mask-configure-template': 'initial'
       }
     })
 
@@ -67,12 +66,6 @@ const pluginFade = plugin(
       matchUtilities(...makeUtility(d))
     })
 
-    addUtilities({
-      '.fade-smooth': {
-        '--fade-mask-configure-template': 'var(--fade-mask-template-smooth)'
-      }
-    })
-
     matchUtilities(
       { 'fade-from': (v) => ({ '--fade-o-from': v }) },
       { values: opacityValues }
@@ -82,7 +75,6 @@ const pluginFade = plugin(
       { 'fade-to': (v) => ({ '--fade-o-to': v }) },
       { values: opacityValues }
     )
-    
 
   },
   {

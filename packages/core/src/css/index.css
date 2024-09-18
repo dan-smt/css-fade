@@ -1,4 +1,7 @@
-*, ::before, ::after {
+
+*, 
+::before, 
+::after {
 
   /* i stands for internal, used to apply default values where no values are provided. */
   --fade-w-r-i: var(--fade-w-r, 0px);
@@ -9,117 +12,53 @@
   --fade-o-from-i: var(--fade-o-from, 100%);
   --fade-o-to-i: var(--fade-o-to, 0%);
 
-  --fade-side-l: 
+  --fade-inline: 
     /* pos */ 
-      left 
-      var(--fade-w-t-i) / 
+      center / 
     /* size */ 
-      var(--fade-w-l-i) 
-      calc(100% - var(--fade-w-b-i) - var(--fade-w-t-i)) 
+      100%
+      100%
     no-repeat 
-    linear-gradient(to left, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
+    linear-gradient(
+      to left, 
+      /* left side edge */
+      rgb(255 255 255 / var(--fade-o-to-i)) 0%,
+      /* left side center */
+      rgb(255 255 255 / var(--fade-o-from-i)) var(--fade-w-l-i),
+      /* right side center */
+      rgb(255 255 255 / var(--fade-o-from-i)) calc(100% - var(--fade-w-r-i)),
+      /* right side edge */
+      rgb(255 255 255 / var(--fade-o-to-i)) 100%
+    )
+    /* composite */
+    intersect
   ;
 
-  --fade-side-r: 
+  --fade-block:
     /* pos */ 
-      right 
-      var(--fade-w-t-i) / 
+    center / 
     /* size */ 
-      var(--fade-w-r-i) 
-      calc(100% - var(--fade-w-b-i) - var(--fade-w-t-i)) 
+      100%
+      100%
     no-repeat 
-    linear-gradient(to right, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
+    linear-gradient(
+      to bottom, 
+      /* top side edge */
+      rgb(255 255 255 / var(--fade-o-to-i)) 0%,
+      /* top side center */
+      rgb(255 255 255 / var(--fade-o-from-i)) var(--fade-w-t-i),
+      /* bottom side center */
+      rgb(255 255 255 / var(--fade-o-from-i)) calc(100% - var(--fade-w-b-i)),
+      /* bottom side edge */
+      rgb(255 255 255 / var(--fade-o-to-i)) 100%
+    )
+    /* composite */
+    intersect
   ;
 
-  --fade-side-t: 
-    /* pos */ 
-      var(--fade-w-l-i) 
-      top / 
-    /* size */ 
-      calc(100% - var(--fade-w-l-i) - var(--fade-w-r-i)) 
-      var(--fade-w-t-i) 
-    no-repeat 
-    linear-gradient(to top, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
+  --fade-mask-template: 
+    var(--fade-inline), 
+    var(--fade-block)
   ;
 
-  --fade-side-b: 
-    /* pos */ 
-      var(--fade-w-l-i) 
-      bottom / 
-    /* size */ 
-      calc(100% - var(--fade-w-l-i) - var(--fade-w-r-i)) 
-      var(--fade-w-b-i) 
-    no-repeat 
-    linear-gradient(to bottom, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
-  ;
-
-  --fade-corner-tl: 
-    /* pos */ left top / 
-    /* size */ 
-      var(--fade-w-l-i) 
-      var(--fade-w-t-i) 
-    no-repeat 
-    radial-gradient(var(--fade-w-l-i) var(--fade-w-t-i) ellipse at 100% 100%, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
-  ;
-
-  --fade-corner-tr: 
-    /* pos */ right top / 
-    /* size */ 
-      var(--fade-w-r-i) 
-      var(--fade-w-t-i) 
-    no-repeat 
-    radial-gradient(var(--fade-w-r-i) var(--fade-w-t-i) ellipse at 0% 100%, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
-  ;
-
-  --fade-corner-bl: 
-    /* pos */ left bottom / 
-    /* size */ 
-      var(--fade-w-l-i) 
-      var(--fade-w-b-i) 
-    no-repeat 
-    radial-gradient(var(--fade-w-l-i) var(--fade-w-b-i) ellipse at 100% 0%, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
-  ;
-
-  --fade-corner-br: 
-    /* pos */ right bottom / 
-    /* size */ 
-      var(--fade-w-r-i) 
-      var(--fade-w-b-i) 
-    no-repeat 
-    radial-gradient(var(--fade-w-r-i) var(--fade-w-b-i) ellipse at 0% 0%, rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-to-i)))
-  ;
-
-  --fade-c:
-    /* pos */ 
-      calc(var(--fade-w-l-i)) 
-      calc(var(--fade-w-t-i)) / 
-    /* size */ 
-      calc(100% - var(--fade-w-l-i) - var(--fade-w-r-i)) 
-      calc(100% - var(--fade-w-t-i) - var(--fade-w-b-i)) 
-    no-repeat 
-    linear-gradient(rgb(255 255 255 / var(--fade-o-from-i)), rgb(255 255 255 / var(--fade-o-from-i)))
-  ;
-
-  --fade-mask-template-base: 
-    var(--fade-side-l), 
-    var(--fade-side-r), 
-    var(--fade-side-t), 
-    var(--fade-side-b),
-
-    var(--fade-corner-tl),
-    var(--fade-corner-tr),
-    var(--fade-corner-bl),
-    var(--fade-corner-br),
-
-    var(--fade-c)
-  ;
-
-  --fade-mask-template-smooth: 
-    /* import base template twice */
-    var(--fade-mask-template-base),
-    var(--fade-mask-template-base)
-  ;
-
-  --fade-mask-template: var(--fade-mask-configure-template, var(--fade-mask-template-base))
-  
 }
