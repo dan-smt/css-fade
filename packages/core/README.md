@@ -1,7 +1,7 @@
 # css-fade
-Advanced fade effects in css made reasonably usable, in TailwindCSS, UnoCSS, and CSS.
+Css mask based fade effects for html elements in css made convenient, in TailwindCSS, UnoCSS, and CSS.
 
-css-fade fades out any part of html elements it's applied to, including all children.
+css-fade fades out any part of html elements it's applied to, including all children using the css mask property.
 
 ## Usage with TailwindCSS & UnoCSS
 
@@ -26,38 +26,8 @@ Usage with UnoCSS, and TailwindCSS are the same, the only difference is Tailwind
 <!-- Kitchen sink, yes multiple classes can be applied on one element -->
 <div class="fade-tl-12 fade-b-4" ></div>
 
-```
-
-### Using relative (%) values versus absolutes
-Because the fade effect is a css *mask* using *linear & radial gradients as mask images*, it's not possible to use % values relative to the element itself while sizing the fade effect, however it is possible to use the css container query api & an additional wrapping html element to use % like values.
-
-*cqw = 1% of container width, cqh = 1% of container height*
-
-```html
-
-<div class="container-query" >
-  <div class="fade-x-[20cqw]" >
-
-  </div>
-</div>
-
-```
-
-```css
-
-  /* where container-query has at least the following css: */
-  .container-query {
-    container-type: inline-size;
-  }
-
-```
-
-### Smoothing the fade
-You may additionally use the `fade-smooth` class to make your fade effect look smoother.
-
-```html
-
-<div class="fade-x-12 fade-smooth" ></div>
+<!-- Using relative (%) values -->
+<div class="fade-x-[30%]" ></div>
 
 ```
 
@@ -70,21 +40,13 @@ Use `fade-from-<0-100>` and  `fade-to-<0-100>` to set the opacity from which the
 
 ```
 
-
-## More
-
-- Using relative (%) values instead absolute values
-- Examples
-- Problems this solves compared to a basic overlay
-- Internals rundown
-
 ## Installation Guides
 
 - TailwindCSS
 - UnoCSS
 - CSS
 
-## Installing The Unified Package
+### Installing The Unified Package
 css-fade comes in a single unified package for all frameworks.
 
 ```sh
@@ -95,7 +57,7 @@ yarn install css-fade
 
 ```
 
-## TailwindCSS
+### TailwindCSS
 
 After installing the unified `css-fade` package, add css-fade to your `tailwind.config.*`:
 
@@ -115,7 +77,7 @@ export default {
 
 ```
 
-## UnoCSS
+### UnoCSS
 
 After installing the unified `css-fade` package, add css-fade to your `uno.config.*`:
 
@@ -138,11 +100,11 @@ export default defineConfig({
 
 ```
 
-## CSS
+### CSS
 
 You may use css-fade in CSS by importing the base CSS, or by copying over the core css.
 
-### Importing base CSS
+#### Importing base CSS
 
 After installing the unified `css-fade` package, import `css-fade/css` into your entry file.
 
@@ -152,10 +114,20 @@ import 'css-fade/css' // <==== import base css
 
 ```
 
-### Copying CSS
+#### Copying CSS
 
 You can find the base CSS for css-fade in `/packages/core/src/css/index.css` in this repository, copy and paste the CSS in a global context in your project.
 
+## Limitations
 
+Even though you can fade on 2 dimensions (vertically & horizontally) it's not recommended to do so with this library in most cases as ugly lines may appear. Due to the way positioning & sizing works in css backgrounds which we're using to generate the mask templates dynamically we had to choose between two appraoches,
 
-Brought to you by the [designers & devs] @ https://withnull.com. 
+- Approach 1: code named BurningPaper (find implementation in playground/astro-css/src/components/BurningPaper.astro )
+  This approach gives us smooth transitions between dimensions, and allows us to add extra utility classes for improved gradient smoothing but does not allow relative (%) values to be used.
+
+- Approach 2: code named RadicalRabbit (find implementation in playground/astro-css/src/components/RadicalRabbit.astro )
+  This approach is a little more janky with transitions between dimensions, and although improvements are possible, does not allow easy improvements to the gradient smoothing.
+
+In vast majority of cases likely usage will be in one dimension, and being able to set a % based fade will be handy, so this package primarily uses Approach 2.
+
+You can find comparison between the 2 approaches at playground/astro-css/src/pages/approaches.astro.
