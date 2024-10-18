@@ -1,22 +1,4 @@
-import { BuildEntry, MkdistBuildEntry, defineBuildConfig } from "unbuild"
-
-// https://github.com/unjs/unbuild/issues/398
-function dualOutput( config: Omit<MkdistBuildEntry, "builder" | "format"> ): BuildEntry[] {
-  return [
-    {
-      builder: "rollup",
-      // format: "esm",
-      ...config,
-      // pattern: "**/*.{ts,js}",
-    },
-    // {
-    //   builder: "mkdist",
-    //   format: "cjs",
-    //   ...config,
-    //   pattern: "**/*.{ts,js}",
-    // }
-  ]
-}
+import { defineBuildConfig } from "unbuild"
 
 export default defineBuildConfig({
   entries: [
