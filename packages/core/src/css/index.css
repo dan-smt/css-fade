@@ -20,7 +20,7 @@
       100%
     no-repeat 
     linear-gradient(
-      to left, 
+      to right, 
       /* left side edge */
       rgb(255 255 255 / var(--fade-o-to-i)) 0%,
       /* left side center */
