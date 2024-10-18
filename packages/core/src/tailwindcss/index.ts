@@ -1,11 +1,12 @@
 import plugin from 'tailwindcss/plugin'
 import postcss from "postcss"
 import postcssJs from "postcss-js"
-import getPreflightCss from '../utils/getPreflightCss'
+import getPreflightCss from '../utils/getPreflightCss.js'
 import getSizes from '../utils/getSizes'
 
 const root = postcss.parse(getPreflightCss())
 
+// @ts-expect-error
 const preflightCssInJs = postcssJs.objectify(root)
 
 const pluginFade = plugin(

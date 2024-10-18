@@ -4,39 +4,44 @@ import { BuildEntry, MkdistBuildEntry, defineBuildConfig } from "unbuild"
 function dualOutput( config: Omit<MkdistBuildEntry, "builder" | "format"> ): BuildEntry[] {
   return [
     {
-      builder: "mkdist",
-      format: "esm",
+      builder: "rollup",
+      // format: "esm",
       ...config,
-      pattern: "**/*.{ts,js}",
+      // pattern: "**/*.{ts,js}",
     },
-    {
-      builder: "mkdist",
-      format: "cjs",
-      ...config,
-      pattern: "**/*.{ts,js}",
-    }
+    // {
+    //   builder: "mkdist",
+    //   format: "cjs",
+    //   ...config,
+    //   pattern: "**/*.{ts,js}",
+    // }
   ]
 }
 
 export default defineBuildConfig({
   entries: [
-    ...dualOutput({
-      input: './src/tailwindcss',
-      outDir: './dist/tailwindcss'
-    }),
-    ...dualOutput({
-      input: './src/unocss',
-      outDir: './dist/unocss'
-    }),
-    ...dualOutput({
-      input: './src/utils',
-      outDir: './dist/utils'
-    }),
     {
-      builder: 'mkdist',
+      builder: 'rollup',
+      input: './src/tailwindcss',
+      outDir: './dist/tailwindcss',
+      name: 'tailwindcss/index'
+    },
+    {
+      builder: 'rollup',
+      input: './src/unocss',
+      outDir: './dist/unocss',
+      name: 'unocss/index'
+    },
+    {
+      builder: 'copy',
       input: './src/css',
       outDir: './dist/css'
     }
   ],
-  declaration: true
+  declaration: true,
+  externals: ['tailwindcss', 'postcss', 'postcss-js', 'unocss'],
+  rollup: {
+    inlineDependencies: true,
+    emitCJS: true
+  }
 })

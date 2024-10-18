@@ -1,6 +1,6 @@
 {
   "name": "css-fade",
-  "version": "0.11.4",
+  "version": "0.11.7",
   "type": "module",
   "homepage": "https://github.com/dan-smt/css-fade",
   "repository": {
@@ -18,12 +18,12 @@
     "./unocss": {
       "types": "./dist/unocss/index.d.ts",
       "import": "./dist/unocss/index.mjs",
-      "require": "./dist/unocss/index.js"
+      "require": "./dist/unocss/index.cjs"
     },
     "./tailwindcss": {
       "types": "./dist/tailwindcss/index.d.ts",
       "import": "./dist/tailwindcss/index.mjs",
-      "require": "./dist/tailwindcss/index.js"
+      "require": "./dist/tailwindcss/index.cjs"
     },
     "./css": "./dist/css/index.css",
     "./css/utilities": "./dist/css/utilities.css"
@@ -32,14 +32,14 @@
     "build": "rimraf ./dist && unbuild"
   },
   "devDependencies": {
-    "typescript": "^5.5.3",
-    "tsx": "^4.16.2",
-    "unbuild": "^2.0.0",
-    "rimraf": "^5.0.7",
     "@types/postcss-js": "^4.0.4",
     "postcss": "^8.4.39",
     "postcss-js": "^4.0.1",
+    "rimraf": "^5.0.7",
     "tailwindcss": "^3.4.4",
-    "unocss": "^0.61.0"
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "unocss": "^0.61.0",
+    "unbuild": "3.0.0-rc.11"
   }
 }

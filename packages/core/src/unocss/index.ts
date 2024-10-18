@@ -5,7 +5,7 @@ import getPreflightCss from '../utils/getPreflightCss'
 
 const preflightCss = getPreflightCss()
 
-export function presetFade(): Preset<Theme> {
+function presetFade(): Preset<Theme> {
   return {
     name: 'unocss-preset-fade',
     preflights: [
@@ -36,7 +36,7 @@ export function presetFade(): Preset<Theme> {
             ['mask', 'var(--fade-mask-template)']
           ]
   
-        },
+        }
       ],
       [
         /^fade-?(from|to)-(\d{1,3})$/,
@@ -50,9 +50,9 @@ export function presetFade(): Preset<Theme> {
           ]
 
         }
-      ],
-    ],
+      ]
+    ]
   }
-}
+};
 
-export default presetFade
+export default presetFade;
