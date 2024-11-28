@@ -6,7 +6,7 @@ css-fade fades out any part of html elements it's applied to, including all chil
 <br>
 
 <p>
-  <img src="https://github.com/dan-smt/css-fade/main/packages/core/assets/examples.png" style="width:100%;" />
+  <img src="https://raw.githubusercontent.com/dan-smt/css-fade/main/packages/core/assets/examples.png" style="width:100%;" />
 </p>
 
 ## Usage with TailwindCSS & UnoCSS
