@@ -75,10 +75,10 @@ After installing the unified `css-fade` package, add css-fade to your `tailwind.
 // import pluginFade from 'css-fade/tailwindcss' // <=== you may also choose to import it
 
 export default {
-	plugins: [
-		require('css-fade/tailwindcss') // <=== add using require
+  plugins: [
+    require('css-fade/tailwindcss') // <=== add using require
     // pluginFade // <===== or import it
-	],
+  ],
 }
 
 ```
@@ -137,3 +137,7 @@ Even though you can fade on 2 dimensions (vertically & horizontally) it's not re
 In vast majority of cases likely usage will be in one dimension, and being able to set a % based fade will be handy, so this package primarily uses Approach 2.
 
 You can find comparison between the 2 approaches at playground/astro-css/src/pages/approaches.astro.
+
+## TODO:
+
+- Make property animatable: [mdn @property](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) when [caniuse css mask](https://caniuse.com/?search=mask) & [caniuse @property](https://caniuse.com/?search=%40property) are at similar adoption.
