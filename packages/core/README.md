@@ -3,6 +3,12 @@ Css mask based fade effects for html elements in css made convenient, in Tailwin
 
 css-fade fades out any part of html elements it's applied to, including all children using the css mask property.
 
+<br>
+
+<p>
+  <img src="https://github.com/dan-smt/css-fade/main/packages/core/assets/examples.png" style="width:100%;" />
+</p>
+
 ## Usage with TailwindCSS & UnoCSS
 
 ### Directions & sizing
