@@ -1,6 +1,6 @@
 {
   "name": "css-fade",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "homepage": "https://github.com/dan-smt/css-fade",
   "repository": {
@@ -8,6 +8,13 @@
     "url": "https://github.com/dan-smt/css-fade",
     "directory": "packages/core"
   },
+  "description": "Fade with css masks instead of adding extra linear gradient elements to the DOM. Works with TailwindCSS, UnoCSS, and CSS.",
+  "keywords": [
+    "fade",
+    "mask",
+    "gradient",
+    "overlay"
+  ],
   "bugs": {
     "url": "https://github.com/dan-smt/css-fade/issues"
   },
