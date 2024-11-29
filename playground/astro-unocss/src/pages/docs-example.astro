@@ -10,7 +10,40 @@ import '@unocss/reset/tailwind.css'
 
   </div> -->
 
-  <div class="w-360 h-180 bg-white grid grid-rows-2 grid-cols-4 place-content-center grid-container" >
+  <div class="w-360 h-270 bg-white grid grid-rows-3 grid-cols-4 place-content-center grid-container" >
+
+    <!-- 0/1 -->
+
+    <div class="col-span-2 repeating-bg" >
+
+      <div class="container-classes" >
+        <span>
+          fade-x-[50%]
+        </span>
+      </div>
+
+      <div class="text-[6rem] font-bold fade-x-[50%]" >
+        css-fade
+      </div>
+
+    </div>
+
+        <!-- 0/2 -->
+
+        <div class="col-span-2 repeating-bg" >
+
+          <div class="container-classes" >
+            <span>
+              <strong>without css-fade:</strong>&nbsp; linear gradient edges visible due to background
+            </span>
+          </div>
+    
+          <div class="text-[6rem] font-bold relative" >
+            css-fade
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" ></div>
+          </div>
+    
+        </div>
 
     <!-- 1 -->
     <div>
@@ -222,6 +255,12 @@ import '@unocss/reset/tailwind.css'
 
 <style>
 
+  .repeating-bg {
+    background-color: #ffffff;
+    background-image: url("./bg-image.svg");
+    background-size: 2%;
+  }
+
   .grid-container {
     --uno: "overflow-hidden"
   }
@@ -239,7 +278,7 @@ import '@unocss/reset/tailwind.css'
   }
 
   .grid-container > * > .container-classes > span {
-    --uno: "py-.5 px-3 rounded-full outline-1 outline-solid outline-white/10 inline-flex text-black items-center shrink-0 bg-black/10"
+    --uno: "py-.5 px-3 rounded-full outline-1 outline-solid outline-white/10 inline-flex text-black items-center shrink-0 bg-black/5"
   }
 
   /* .animate {
