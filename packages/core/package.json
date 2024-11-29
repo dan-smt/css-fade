@@ -1,6 +1,6 @@
 {
   "name": "css-fade",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "homepage": "https://github.com/dan-smt/css-fade",
   "repository": {
@@ -15,6 +15,7 @@
     "gradient",
     "overlay"
   ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dan-smt/css-fade/issues"
   },
