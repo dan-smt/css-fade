@@ -5,5 +5,8 @@ import UnocssAstroIntegration from 'unocss/astro';
 export default defineConfig({
   integrations: [
     UnocssAstroIntegration()
-  ]
+  ],
+  devToolbar: {
+    enabled: false
+  }
 });
