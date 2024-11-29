@@ -1,7 +1,7 @@
 # css-fade
-Css mask based fade effects for html elements in css made convenient, in TailwindCSS, UnoCSS, and CSS.
+css-fade fades out one or multiple sides of html elements it's applied to, including all nested elements; using the css mask property.
 
-css-fade fades out any part of html elements it's applied to, including all children using the css mask property.
+Works in TailwindCSS, UnoCSS, and vanilla CSS.
 
 <br>
 
@@ -19,7 +19,7 @@ Usage with UnoCSS, and TailwindCSS are the same, the only difference is Tailwind
 <!-- Set fade towards a single direction -->
 <div class="fade-b-24" ></div>
 
-<!-- Set fade towards a 2 directions -->
+<!-- Set fade towards 2 directions -->
 <div class="fade-x-24" ></div>
 
 <!-- Set fade towards all directions -->
