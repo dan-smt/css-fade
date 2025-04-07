@@ -1,5 +1,5 @@
 
-> TailwindCSS v4.1
+> ## TailwindCSS v4.1 Note:
 > Consider [mask utilities](https://tailwindcss.com/docs/mask-image) before installing another package if you're on version 4.1.
 
 # css-fade
