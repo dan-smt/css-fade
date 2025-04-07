@@ -1,3 +1,7 @@
+
+> TailwindCSS v4.1
+> Consider [mask utilities](https://tailwindcss.com/docs/mask-image) before installing another package if you're on version 4.1.
+
 # css-fade
 css-fade fades out one or multiple sides of html elements it's applied to, including all nested elements; using the css mask property.
 
